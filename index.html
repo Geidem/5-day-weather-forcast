@@ -1,15 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/pico.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>5 day weather forcast</title>
+    <title>5 Day Weather Forecast</title>
   </head>
   <body>
-    <main class="container">
+    <header>
       <h1>Weather Dashboard</h1>
+      <form id="search-form">
+        <label for="city-input">Enter City Name:</label>
+        <input type="text" id="city-input" name="city-input" required>
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <main class="container">
+      <section id="current-weather">
+        <h2>Current Weather</h2>
+        <div id="current-weather-info">
+          <h3 id="city-name"></h3>
+          <h3 id="date"></h3>
+          <img src="" alt="" id="weather-icon">
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+          <p id="wind-speed"></p>
+        </div>
+      </section>
+
+      <section id="5-day-forecast">
+        <h2>5-Day Forecast</h2>
+        <div class="forecast-container">
+          <div class="forecast-card">
+            <h3 class="forecast-date"></h3>
+            <img src="" alt="" class="forecast-icon">
+            <p class="forecast-temp"></p>
+            <p class="forecast-wind"></p>
+            <p class="forecast-humidity"></p>
+          </div>
+          <div class="forecast-card">
+            <!-- Repeat for 5 days -->
+          </div>
+        </div>
+      </section>
+
+      <section id="search-history">
+        <h2>Search History</h2>
+        <ul id="search-history-list">
+          <!-- Dynamically populated with search history -->
+        </ul>
+      </section>
     </main>
+
+    <script src ="./assets/js/script.js"></script>
   </body>
 </html>
