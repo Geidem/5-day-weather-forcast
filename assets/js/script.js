@@ -1,13 +1,27 @@
-var searchForm = document.querySelector('#search-form');
-var city = document.querySelector('#city-name');
-var date = document.querySelector('date');
-var weatherIcon = document.querySelector('#weather-icon');
-var temperature =  document.querySelector('#temperature');
-var humidity = document.querySelector('#humidity');
-var windSpeed = document.querySelector('#wind-speed');
-var forecastContainer = document.querySelector('#5-day-forecast');
+var searchForm = document.getElementById('search-form');
+var searchInput = document.getElementById('city-input');
+var searchHistory = document.getElementById('search-history-list');
+var currentWeather = document.getElementById('current-weather-info');
+var forecast = document.getElementById('5-day-forecast')
 
-var apiUrl = 'https://api.openweathermap.org/data/2.5/';
-var apiKey = 'fe74c2ee80a2a10c992d91b08ea27c27'
 
-//event listener to search from form information
+var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
+var apiKey = 'fe74c2ee80a2a10c992d91b08ea27c27';
+
+var searchHistoryData = JSON.parse(localStorage.getItem('searchHistoryData')) || [];
+
+if (searchHistoryData.length > 0) {
+    renderSearchHistory();
+}
+
+searchForm.addEventListener('submit' , function(event) {
+    event.preventDefault();
+
+    var cityName = searchInput.ariaValueMax.trim();
+    if (cityName !== '') {
+        getWeatherdata(cityName);
+    }
+    searchInput.value = '';
+});
+
+
