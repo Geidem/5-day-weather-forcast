@@ -1,0 +1,16 @@
+#city-input {align-items: flex-start;
+    width: 250px;
+
+}
+
+button {
+    align-items: flex-start;
+    width: 300px;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
