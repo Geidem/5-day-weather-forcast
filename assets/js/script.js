@@ -26,7 +26,7 @@ searchForm.addEventListener('submit', function (event) {
 
 //Get weather data for a city and add to UI
 function getWeatherdata(cityName) {
-    var apiUrlParams = `${apiUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
+    var apiUrlParams = `${apiUrl}?q=${cityName}&appid=${apiKey}&units=imperial`;
 
     fetch(apiUrlParams)
         .then(function (response) {

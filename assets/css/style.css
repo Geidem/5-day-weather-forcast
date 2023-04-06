@@ -1,4 +1,13 @@
-#city-input {align-items: flex-start;
+body {
+    background-color: rgb(180, 180, 180);
+}
+
+#current-weather {
+    background-color: cadetblue;
+    border-radius: 7px;
+}
+
+#city-input {align-items: flex-start; 
     width: 250px;
 
 }
@@ -8,9 +17,25 @@ button {
     width: 300px;
 }
 
-.forecast-container {
+.row {
     display: flex;
     flex-direction: row;
 }
+ 
+.forecast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 7px;
+  }
 
+  .forecast-card {
+    width: 30%;
+    margin-bottom: 20px;
+    border-radius: 7px;
+  }
 
+  #search-history {
+    background-color: cadetblue;
+    border-radius: 7px;
+  }
