@@ -74,7 +74,7 @@ function renderCurrentWeather(data) {
     var icon = data.list[0].weather[0].icon;
     var temperature = data.list[0].main.temp.toFixed(1) + 'F';
     var humidity = data.list[0].main.humidity + '%';
-    var windSpeed = data.list[0].wind.speed.toFixed(1) + 'm/s';
+    var windSpeed = data.list[0].wind.speed.toFixed(1) + 'mph';
 
     var weatherIcon = document.createElement("img");
     weatherIcon.setAttribute(
